@@ -3,14 +3,13 @@ os: linux
 files:
   - source: /
     destination: /new_chatapp
-    overwrite: true
 hooks: 
   ApplicationStop:
-    - location: /stop_server.sh
+    - location: /stopserver.sh
       timeout: 300
       runas: root
   BeforeInstall:
-    - location: /install_dependencies.sh
+    - location: /installdependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
@@ -18,6 +17,6 @@ hooks:
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /start_server.sh
+    - location: /startserver.sh
       timeout: 300
       runas: root
